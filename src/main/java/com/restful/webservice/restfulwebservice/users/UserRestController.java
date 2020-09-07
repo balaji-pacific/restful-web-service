@@ -36,6 +36,11 @@ public class UserRestController extends CustomResponseEntityExceptionHandler {
 	public List<User> retrieveAlUsers(){
 		return userDAOService.findAll();
 	}
+	
+	@GetMapping(path = "/print")
+	public String printStatement(){
+		return "Welcome";
+	}
 
 	@GetMapping(path = "/users/{id}")
 	public User findUser(@PathVariable Integer id) {
