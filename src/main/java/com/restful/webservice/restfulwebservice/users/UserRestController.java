@@ -32,6 +32,11 @@ public class UserRestController extends CustomResponseEntityExceptionHandler {
 	@Autowired
 	private UserDAOService userDAOService;
 
+	@GetMapping(path = "/")
+	public String defaultMethod(){
+		return "Hi Welcome!!!!";
+	}
+	
 	@GetMapping(path = "/users")
 	public List<User> retrieveAlUsers(){
 		return userDAOService.findAll();
